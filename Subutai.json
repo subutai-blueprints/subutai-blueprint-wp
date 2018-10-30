@@ -1,7 +1,7 @@
 {
     "name": "${environmentName}",
     "description": "Wordpress Standalone",
-    "version": "1.0.0",
+    "version": "2.0.4",
     "author": "https://github.com/lbthomsen",
     "containers": [
         {
@@ -21,8 +21,7 @@
     ],
     "peer-criteria": [
         {
-            "name": "HTTP-GROUP",
-            "max-price": "25"
+            "name": "HTTP-GROUP"
         }
     ],
     "ansible-configuration": {
@@ -32,6 +31,10 @@
             {
                 "key": "site_title",
                 "value": "${siteTitle}"
+            }, 
+            {
+                "key": "site_description",
+                "value": "${siteDescription}"
             }, 
             {
                 "key": "domain_name",
@@ -72,6 +75,11 @@
             "description": "Enter the site's title",
             "type": "string",
             "default": "title"
+        },
+        "siteDescription": {
+            "description": "Enter the site's description/tagline",
+            "type": "string",
+            "default": "description"
         },
         "adminUser": {
             "description": "Site administrator user",
